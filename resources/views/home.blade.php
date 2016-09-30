@@ -13,6 +13,11 @@
                 </div>
                 <div class="woocommerce columns-6">
                     <div class="row">
+                        @if (session('msg'))
+                        <div class="alert alert-danger">
+                                {{ session('msg') }}
+                        </div>
+                        @endif
                         <ul class="products">
                             @foreach($products as $product)
                             <li class="product col-md-2"> <a href="/producto/{{ $product->slug }}">

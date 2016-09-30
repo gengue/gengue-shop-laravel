@@ -23,3 +23,13 @@ Route::get('/comprar', 'ShopController@get_payment');
 Route::post('/comprar', 'ShopController@post_payment');
 
 Route::get('/producto/{slug}', 'ShopController@detail');
+
+//admin
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/products', 'AdminController@list_products');
+Route::get('/admin/products/new', 'AdminController@new_product');
+Route::post('/admin/products/new', 'AdminController@create_product');
+Route::get('/admin/products/{id}/edit', 'AdminController@edit_product');
+Route::put('/admin/products/{id}/edit', 'AdminController@update_product');
+Route::delete('/admin/products/{id}/destroy', 'AdminController@destroy_product');
+Route::get('/admin/sales', 'AdminController@list_sales');

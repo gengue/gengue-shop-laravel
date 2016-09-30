@@ -18,6 +18,6 @@ class Order extends Model
 
     public function product()
     {
-        return $this->belongsTo('App\Sale');
+        return $this->belongsTo('App\Product');
     }
 }

@@ -10,6 +10,11 @@ class Sale extends Model
         'user_id', 'total'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     public function orders()
     {
         return $this->hasMany('App\Order');
@@ -17,6 +22,6 @@ class Sale extends Model
 
     public function products()
     {
-        return $this->hasManyThrough('App\Product', 'App\Order');
+        return $this->hasManyThrough('App\Product', 'App\Product');
     }
 }

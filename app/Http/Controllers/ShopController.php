@@ -58,6 +58,8 @@ class ShopController extends Controller
             $order->units = $data['units'];
             $order->save();
             $total += intval($data['units']) * $product->price;
+            $product -= $order->units;
+            $product->save();
         }
         $sale->total = $total;
         $sale->save();
